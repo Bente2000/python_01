@@ -26,7 +26,7 @@ class Plant:
 
     def __repr__(self) -> str:
         return (
-            f"{self._name}: {round(self._height, 3)}cm tall, "
+            f"{self._name}: {round(self._height, 3)}cm, "
             f"{self._age} days old"
         )
 
@@ -142,15 +142,11 @@ if __name__ == "__main__":
     print("[asking the rose to bloom]")
     rose.bloom()
     rose.show()
-    print(" ")
-
-    print("=== Tree")
+    print("\n=== Tree")
     walnut.show()
     print("[asking the walnut tree to produce shade]")
     walnut.produce_shade()
-    print(" ")
-
-    print("=== Vegetable")
+    print("\n=== Vegetable")
     cauliflower.show()
     print("[make cauliflower grow and age for 20 days]")
     for _ in range(20):

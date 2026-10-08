@@ -7,7 +7,7 @@ class Plant:
             age: int,
             height: float,
             grow_rate: float = 0
-        ) -> None:
+            ) -> None:
         self._name = name
         if name == "Rose":
             self._height = 25
@@ -29,7 +29,11 @@ class Plant:
             self.__grow_rate = 0.15
             self._height = 12
             self._age = 60
-        print("Plant created:", end= " ")
+        else:
+            self._age = age
+            self._height = height
+            self._grow_rate = grow_rate
+        print("Plant created:", end=" ")
         self.show()
         print(" ")
 
@@ -44,8 +48,8 @@ class Plant:
         print(self)
 
     def __repr__(self) -> str:
-        return(
-                f"{self._name}: {round(self._height, 3)}cm tall, "
+        return (
+                f"{self._name}: {round(self._height, 3)}cm, "
                 f"{self._age} days old"
         )
 
@@ -71,19 +75,18 @@ class Plant:
     def get_age(self) -> int:
         return (self._age)
 
+
 def ft_garden_security(name: str, age: int, height: float) -> None:
     plant_object = Plant(name, age, height)
     plant_object.set_height(height)
     plant_object.set_age(age)
-    print(" ")
-    print("Current state:", end=" ")
+    print("\nCurrent state:", end=" ")
     plant_object.show()
     new_height = plant_object.get_height()
     new_age = plant_object.get_age()
     print(new_height)
-    print(new_age)
-    print(" ")
-    print(" ")
+    print(f"{new_age}\n\n")
+
 
 if __name__ == "__main__":
     print("=== Garden Security System ===")

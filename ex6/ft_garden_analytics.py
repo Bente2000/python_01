@@ -248,18 +248,13 @@ if __name__ == "__main__":
     plant = Plant.create_anonymous_plant()
     sunflower = Seed("Sunflower", 45, 80, "yellow")
     statistical_data = plant._Statistical_data()
-    print(sunflower._Plant__name)
-
     print("=== Garden statistics ===")
     print("=== Check year-old ===")
     print(Plant.age_checker(30))
     print(Plant.age_checker(400))
-    print("")
-
-    print("=== Flower")
+    print("\n=== Flower")
     rose.show()
     print("[statistics for Rose]")
-    # rose_statistics.show_data()
     rose.show_data()
     print("[asking the rose to grow and bloom]")
     rose.grow()
@@ -267,9 +262,7 @@ if __name__ == "__main__":
     rose.show()
     print("[statistics for Rose]")
     rose.show_data()
-    print("")
-
-    print("=== Tree")
+    print("\n=== Tree")
     walnut.show()
     print("[statistics for walnut tree]")
     walnut.show_data()
@@ -277,9 +270,7 @@ if __name__ == "__main__":
     walnut.produce_shade()
     print("[statistics for walnut tree]")
     walnut.show_data()
-    print("")
-
-    print("=== Seed")
+    print("\n=== Seed")
     sunflower.show()
     for _ in range(20):
         sunflower.grow()
@@ -287,13 +278,11 @@ if __name__ == "__main__":
     sunflower.show()
     sunflower.show_data()
     sunflower.show_data()
-
     print("=== Anonymous")
     plant.show()
     print("[statistics for Unknown plant]")
     plant.show_data()
     print("")
-
     display_any_plant(plant)
     display_any_plant(rose)
     display_any_plant(walnut)
