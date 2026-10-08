@@ -7,7 +7,7 @@ class Plant:
             age: int,
             height: float,
             grow_rate: float = 0
-        ) -> None:
+            ) -> None:
         self.__name = name
         self.__age = age
         self.__height = height
@@ -21,6 +21,8 @@ class Plant:
             self.__grow_rate = 1
         elif name == "Cauliflower":
             self.__grow_rate = 0.15
+        else:
+            self.__grow_rate = grow_rate
 
     def grow(self) -> float:
         self.__height += self.__grow_rate
@@ -33,15 +35,17 @@ class Plant:
         print(self)
 
     def __repr__(self) -> str:
-        return(
-                f"{self.__name}: {round(self.__height, 3)}cm tall, "
+        return (
+                f"{self.__name}: {round(self.__height, 3)}cm, "
                 f"{self.__age} days old"
         )
 
+
 def ft_plant_factory(name: str, age: int, height: float) -> None:
     plant_object = Plant(name, age, height)
-    print("Created:", end= " ")
+    print("Created:", end=" ")
     plant_object.show()
+
 
 if __name__ == "__main__":
     print("=== Plant Factory Output ===")

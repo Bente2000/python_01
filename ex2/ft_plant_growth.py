@@ -7,7 +7,7 @@ class Plant:
             age: int,
             height: float,
             grow_rate: float = 0
-        ) -> None:
+            ) -> None:
         self.__name = name
         self.__age = age
         self.__height = height
@@ -17,7 +17,8 @@ class Plant:
             self.__grow_rate = 1.5
         elif name == "Cactus":
             self.__grow_rate = 0.1
-
+        else:
+            self.__grow_rate = grow_rate
 
     def grow(self) -> float:
         self.__height += self.__grow_rate
@@ -30,37 +31,28 @@ class Plant:
         print(self)
 
     def __repr__(self) -> str:
-        return(
-                f"{self.__name}: {round(self.__height, 3)}cm tall, "
+        return (
+                f"{self.__name}: {round(self.__height, 3)}cm, "
                 f"{self.__age} days old"
         )
 
-def show_grow_age(plant: Plant) -> None:
+
+def show_grow_age(plant: Plant) -> float:
     plant.show()
     height = plant.grow()
     plant.age()
     return (height)
 
+
 def ft_plant_growth(name: str, age: int, height: float) -> None:
     plant_object = Plant(name, age, height)
-    plant_object_2 = Plant(name + "_2", age, height, grow_rate = 0.2)
     starting_height = height
     for day in range(8):
         print(f"=== Day {day} ===")
         height = show_grow_age(plant_object)
-#        for element in [plant_object, plant_object_2]:
-#            element.show()
-#            element.grow()
-#            element.age()
-        # plant_object.show()
-        # plant_object_2.show()
-        # plant_object_2.grow()
-        # plant_object_2.age()
-        # plant_object.grow()
-        # plant_object.age()
     growth = round((height - starting_height) * 7/8, 3)
-    print(f"Growth this week: {growth}")
-    print("")
+    print(f"Growth this week: {growth}\n")
+
 
 if __name__ == "__main__":
     print("=== Garden Plant Growth ===")
